@@ -8,14 +8,17 @@ def new
     @user = User.confirm(user_params)
     if @user
       login(@user)
+      flash[:notice] = "Successfully logged in."
       redirect_to @user
     else
+      flash[:error] = "Incorrec email or password."
       redirect_to login_path
     end
   end
   def destroy
-      logout # this method lives in the SessionsHelper!
-      redirect_to root_path
+    session[:user_id] = nil
+    flash[:notice] = "Successfully logged out."        # <--- Add this flash notice
+    redirect_to root_path
     end
 
 
