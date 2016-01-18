@@ -17,13 +17,13 @@ Rails.application.routes.draw do
 
   get 'articles/destroy'
 
-  get 'users/index', to: "users#index" 
+  get '/users', to: "users#index" 
 
-  get 'users/new', to: "users#new" 
+  get '/users/new', to: "users#new" 
 
-  get 'users/create'
+  post '/users', to: "users#create"
 
-  get 'users/show'
+  get 'users/:id', to: "users#show"
 
   get 'users/edit'
 
