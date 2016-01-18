@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   end
 
   def new
+    @users = User.new
+
+    render :new
   end
 
   def create
