@@ -9,12 +9,13 @@ class UsersController < ApplicationController
 
     render :new
   end
+  
+def create
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password)
+    @user = User.create(user_params)
 
-	def create
-		user_params = params.require(:user).permit(:first_name, :last_name,:email, :password)
-		@user = User.create(user_params)
+    redirect_to root_path
+  end
 
-		redirect_to root_path
-	end
 
 end
