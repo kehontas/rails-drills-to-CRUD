@@ -16,4 +16,8 @@ post "/sessions", to: "sessions#create"
 
 get "/articles", to: "articles#index", as: "articles"
 
+get "/articles/new", to: "libraries#new", as: "new_library"
+
+post "/articles", to: "articles#create"
+
 end
