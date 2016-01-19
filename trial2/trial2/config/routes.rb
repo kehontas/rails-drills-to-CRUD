@@ -14,4 +14,6 @@ get "/logout", to: "sessions#destroy"
 
 post "/sessions", to: "sessions#create"
 
+get "/articles", to: "articles#index", as: "articles"
+
 end
