@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
 	has_secure_password
 
-	class User < ActiveRecord::Base
-  has_secure_password
 
   def self.confirm(params)
     @user = User.find_by({email: params[:email]})
@@ -10,4 +8,3 @@ class User < ActiveRecord::Base
   end
 end
 
-end
