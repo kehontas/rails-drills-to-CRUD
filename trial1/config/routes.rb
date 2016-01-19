@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'sessions/create'
 
-  get 'articles/index'
+  get '/articles', to: "articles#index"
 
   get 'articles/new'
 
